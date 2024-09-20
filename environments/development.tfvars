@@ -22,4 +22,12 @@ subnet_app = {
     }
 }
 
+# AKS
+aks_name = "aks-dev-app"
+dns_prefix_private_cluster = "exampleprivateaks"
+default_node_pool_name = "nodepool1"
+default_node_pool_count = 1
+default_node_pool_vm_size = "Standard_D2_v2"
+identity_type = "SystemAssigned"
+
 location = "South East Asia"
