@@ -53,4 +53,30 @@ max_size_gb = 2
 mssql_db_sku_name = "S0"
 enclave_type = "Default"
 
+# Public IP
+pip_name = "pip-dev-web"
+allocation_method = "Static"
+
+# Application gateway
+appgw_name = "appgw-dev-web"
+appgw_sku_name = "Standard_v2"
+appgw_sku_tier = "Standard_v2"
+appgw_sku_capacity = 2
+gateway_ip_configuration_name = "appgw-gateway-ip-config"
+frontend_port_name = "appgw-frontend-port"
+frontend_port_port = 80
+frontend_ip_configuration_name = "appgw-frontend-ip-config"
+backend_address_pool_name = "appgw-backend-address-pool"
+backend_http_settings_name = "appgw-backend-http-settings"
+backend_http_settings_cookie_based_affinity = "Disabled"
+backend_http_settings_path = "/path1/" # To update according to application deployed in AKS
+backend_http_settings_port = 80
+backend_http_settings_protocol = "Http"
+backend_http_settings_request_timeout = 60
+http_listener_name = "appgw-http-listener"
+http_listener_protocol = "Http"
+request_routing_rule_name = "appgw-request-routing-rule"
+request_routing_rule_priority = 9
+request_routing_rule_type = "Basic"
+
 location = "South East Asia"
