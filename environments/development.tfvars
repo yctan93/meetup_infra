@@ -22,6 +22,10 @@ subnet_app = {
     }
 }
 
+# VNet peering
+web_to_app_vnet_peering_name = "vnet_peering-dev-web_to_app"
+app_to_web_vnet_peering_name = "vnet_peering-dev-app_to_web"
+
 # AKS
 aks_name = "aks-dev-app"
 dns_prefix_private_cluster = "exampleprivateaks"

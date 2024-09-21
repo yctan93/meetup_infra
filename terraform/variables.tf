@@ -38,6 +38,15 @@ variable "subnet_app" {
     }))
 }
 
+# VNet peering
+variable "web_to_app_vnet_peering_name" {
+    type = string
+}
+
+variable "app_to_web_vnet_peering_name" {
+    type = string
+}
+
 # AKS
 variable "aks_name" {
     type = string
