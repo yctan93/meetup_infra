@@ -16,4 +16,6 @@ module "mssql-db" {
     max_size_gb = var.max_size_gb
     sku_name = var.mssql_db_sku_name
     enclave_type  = var.enclave_type 
+
+    depends_on = [ module.mssql-server ]
 }

@@ -47,6 +47,69 @@ variable "app_to_web_vnet_peering_name" {
     type = string
 }
 
+# Network security group 
+
+variable "nsg_name_web" {
+    type = string
+}
+
+variable "security_rule_web" {
+    type = map(object({
+        name = string
+        priority = number
+        direction = string
+        access = string
+        protocol = string
+        source_port_range = string
+        destination_port_range = string
+        source_address_prefix = string
+        destination_address_prefix = string
+        description = string
+    }))
+}
+
+variable "nsg_name_app" {
+    type = string
+}
+
+variable "security_rule_app" {
+    type = map(object({
+        name = string
+        priority = number
+        direction = string
+        access = string
+        protocol = string
+        source_port_range = string
+        destination_port_range = string
+        source_address_prefix = string
+        destination_address_prefix = string
+        description = string
+    }))
+}
+
+# Route table
+variable "route_table_name_web" {
+    type = string
+}
+variable "route_web" {
+    type = map(object({
+        name = string
+        address_prefix = string
+        next_hop_type = string
+    }))
+}
+
+variable "route_table_name_app" {
+    type = string
+}
+variable "route_app" {
+    type = map(object({
+        name = string
+        address_prefix = string
+        next_hop_type = string
+    }))
+}
+
 # AKS
 variable "aks_name" {
     type = string

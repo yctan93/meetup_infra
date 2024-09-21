@@ -9,6 +9,8 @@ module "web-kv-private-endpoint" {
     is_manual_connection = var.is_manual_connection
     private_dns_zone_group_name = var.private_dns_zone_group_name
     private_dns_zone_group_private_dns_zone_ids = [module.web-kv-privatednszone.private_dns_zone_id]
+
+    depends_on = [ module.web-kv-privatednszone ]
 }
 
 module "app-kv-private-endpoint" {
@@ -22,6 +24,8 @@ module "app-kv-private-endpoint" {
     is_manual_connection = var.is_manual_connection
     private_dns_zone_group_name = var.private_dns_zone_group_name
     private_dns_zone_group_private_dns_zone_ids = [module.app-kv-privatednszone.private_dns_zone_id]
+
+    depends_on = [ module.app-kv-privatednszone ]
 }
 
 module "app-acr-private-endpoint" {
@@ -35,6 +39,8 @@ module "app-acr-private-endpoint" {
     is_manual_connection = var.is_manual_connection
     private_dns_zone_group_name = var.private_dns_zone_group_name
     private_dns_zone_group_private_dns_zone_ids = [module.app-acr-privatednszone.private_dns_zone_id]
+
+    depends_on = [ module.app-acr-privatednszone ]
 }
 
 module "app-mssqldb-private-endpoint" {
@@ -48,4 +54,6 @@ module "app-mssqldb-private-endpoint" {
     is_manual_connection = var.is_manual_connection
     private_dns_zone_group_name = var.private_dns_zone_group_name
     private_dns_zone_group_private_dns_zone_ids = [module.app-mssqldb-privatednszone.private_dns_zone_id]
+
+    depends_on = [ module.app-mssqldb-privatednszone ]
 }

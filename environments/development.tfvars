@@ -26,6 +26,84 @@ subnet_app = {
 web_to_app_vnet_peering_name = "vnet_peering-dev-web_to_app"
 app_to_web_vnet_peering_name = "vnet_peering-dev-app_to_web"
 
+# Network security group
+nsg_name_web = "nsg-dev-web"
+security_rule_web = {
+    001 = {
+        name = "nsgr-200-inbound"
+        priority = 200
+        direction = "Inbound"
+        access = "Allow"
+        protocol = "Tcp"
+        source_port_range = "*"
+        destination_port_range = "*"
+        source_address_prefix = "10.2.1.0/24"
+        destination_address_prefix = "10.1.1.0/24" 
+        description = "Allow inbound from subnet in app vnet to subnet in web vnet"
+    }
+
+    002 = {
+        name = "nsgr-200-outbound"
+        priority = 200
+        direction = "Outbound"
+        access = "Allow"
+        protocol = "Tcp"
+        source_port_range = "*"
+        destination_port_range = "*"
+        source_address_prefix = "10.1.1.0/24" 
+        destination_address_prefix = "10.2.1.0/24"
+        description = "Allow outbound from subnet in web vnet to subnet in app vnet"
+    }
+}
+
+nsg_name_app = "nsg-dev-app"
+security_rule_app = {
+    001 = {
+        name = "nsgr-200-inbound"
+        priority = 200
+        direction = "Inbound"
+        access = "Allow"
+        protocol = "Tcp"
+        source_port_range = "*"
+        destination_port_range = "*"
+        source_address_prefix = "10.1.1.0/24"
+        destination_address_prefix = "10.2.1.0/24" 
+        description = "Allow inbound from subnet in web vnet to subnet in app vnet"
+    }
+
+    002 = {
+        name = "nsgr-200-outbound"
+        priority = 200
+        direction = "Outbound"
+        access = "Allow"
+        protocol = "Tcp"
+        source_port_range = "*"
+        destination_port_range = "*"
+        source_address_prefix = "10.2.1.0/24" 
+        destination_address_prefix = "10.1.1.0/24"
+        description = "Allow outbound from subnet in app vnet to subnet in web vnet"
+    }
+}
+
+# Route table
+route_table_name_web = "route_table-dev-web"
+route_web = {
+    001 = {
+        name = "route-web-to-app"
+        address_prefix = "10.2.1.0/24"
+        next_hop_type = "VnetLocal"
+    }
+}
+
+route_table_name_app = "route_table-dev-app"
+route_app = {
+    001 = {
+        name = "route-app-to-web"
+        address_prefix = "10.1.1.0/24"
+        next_hop_type = "VnetLocal"
+    }
+}
+
 # AKS
 aks_name = "aks-dev-app"
 dns_prefix_private_cluster = "exampleprivateaks"

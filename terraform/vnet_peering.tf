@@ -4,6 +4,11 @@ module "web_to_app_vnet_peering" {
     resource_group_name = module.rg-web.rg_name
     vnet_name = module.vnet-web.vnet_name
     remote_vnet_id = module.vnet-app.vnet_id
+    
+    depends_on = [ 
+        module.vnet-web,
+        module.vnet-app
+    ]
 }
 
 module "app_to_web_vnet_peering" {
@@ -12,4 +17,9 @@ module "app_to_web_vnet_peering" {
     resource_group_name = module.rg-app.rg_name
     vnet_name = module.vnet-app.vnet_name
     remote_vnet_id = module.vnet-web.vnet_id
+
+    depends_on = [ 
+        module.vnet-web,
+        module.vnet-app
+    ]
 }
