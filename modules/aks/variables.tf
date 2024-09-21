@@ -10,6 +10,9 @@ variable "resource_group_name" {
 variable "dns_prefix_private_cluster" {
     type = string
 }
+variable "private_cluster_enabled" {
+    type = bool
+}
 variable "default_node_pool_name" {
     type = string
 }

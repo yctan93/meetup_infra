@@ -45,6 +45,9 @@ variable "aks_name" {
 variable "dns_prefix_private_cluster" {
     type = string
 }
+variable "private_cluster_enabled" {
+    type = bool
+}
 variable "default_node_pool_name" {
     type = string
 }
@@ -56,6 +59,35 @@ variable "default_node_pool_vm_size" {
 }
 variable "identity_type" {
     type = string
+}
+
+# Key vault 
+variable "kv_web_name" {
+    type = string
+}
+variable "kv_app_name" {
+    type = string
+}
+variable "enabled_for_disk_encryption" {
+    type = bool
+}
+variable "soft_delete_retention_days" {
+    type = number
+}
+variable "purge_protection_enabled" {
+    type = bool
+}
+variable "sku_name" {
+    type = string
+}
+variable "key_permissions" {
+    type = list(string)
+}
+variable "secret_permissions" {
+    type = list(string)
+}
+variable "storage_permissions" {
+    type = list(string)
 }
 
 variable "location" {

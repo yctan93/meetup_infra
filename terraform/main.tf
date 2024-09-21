@@ -13,6 +13,8 @@ terraform {
 
 provider "azurerm" {
   features {}
+  tenant_id       = file("./ids/tenant_id")
+  subscription_id = file("./ids/subscription_id")
   use_msi = false
 }
 

@@ -25,9 +25,21 @@ subnet_app = {
 # AKS
 aks_name = "aks-dev-app"
 dns_prefix_private_cluster = "exampleprivateaks"
+private_cluster_enabled = true
 default_node_pool_name = "nodepool1"
 default_node_pool_count = 1
 default_node_pool_vm_size = "Standard_D2_v2"
 identity_type = "SystemAssigned"
+
+#Key vault
+kv_web_name = "kv-dev-web"
+kv_app_name = "kv-dev-app"
+enabled_for_disk_encryption = true
+soft_delete_retention_days = 7
+purge_protection_enabled = false
+sku_name = "standard"
+key_permissions = ["Get"]
+secret_permissions = ["Get"]
+storage_permissions  = ["Get"]
 
 location = "South East Asia"
