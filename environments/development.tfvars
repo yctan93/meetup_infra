@@ -79,4 +79,29 @@ request_routing_rule_name = "appgw-request-routing-rule"
 request_routing_rule_priority = 9
 request_routing_rule_type = "Basic"
 
+# Azure container registry
+acr_name = "acrdevapp"
+acr_sku = "Standard"
+admin_enabled = false
+
+# Private DNS zone
+kv_private_dns_zone_name = "privatelink.vaultcore.windows.net"
+acr_private_dns_zone_name = "privatelink.azurecr.windows.net"
+mssqldb_private_dns_zone_name = "privatelink.database.windows.net"
+
+# Private endpoint
+web_kv_private_endpoint_name = "web-dev-kv-private-endpoint"
+app_kv_private_endpoint_name = "app-dev-kv-private-endpoint"
+app_acr_private_endpoint_name = "app-dev-acr-private-endpoint"
+app_mssqldb_private_endpoint_name = "app-dev-mssqldb-private-endpoint"
+private_service_connection_name = "web-dev-kv-private-service-connection"
+is_manual_connection = false
+private_dns_zone_group_name = "web-dev-kv-private-dns-zone-group-name"
+
+# Private virtual network link
+web_kv_vnet_link_name = "web-dev-kv-vnet-link"
+app_kv_vnet_link_name = "app-dev-kv-vnet-link"
+app_acr_vnet_link_name = "app-dev-acr-vnet-link"
+app_mssqldb_vnet_link_name = "app-dev-mssqldb-vnet-link"
+
 location = "South East Asia"
