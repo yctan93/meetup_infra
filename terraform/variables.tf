@@ -90,6 +90,19 @@ variable "storage_permissions" {
     type = list(string)
 }
 
+# MSSQL Server
+variable "mssql_name" {
+    type = string
+}
+
+# MSSQL Database
+variable "mssql_db_name" {}
+variable "collation" {}
+variable "license_type" {}
+variable "max_size_gb" {}
+variable "mssql_db_sku_name" {}
+variable "enclave_type" {}
+
 variable "location" {
     type = string
 }

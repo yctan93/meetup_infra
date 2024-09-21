@@ -42,4 +42,15 @@ key_permissions = ["Get"]
 secret_permissions = ["Get"]
 storage_permissions  = ["Get"]
 
+# MSSQL Server
+mssql_name = "mssqlserver-dev-app"
+
+# MSSQL Database
+mssql_db_name = "mssqldb-dev-app"
+collation = "SQL_Latin1_General_CP1_CI_AS"
+license_type = "LicenseIncluded"
+max_size_gb = 2
+mssql_db_sku_name = "S0"
+enclave_type = "Default"
+
 location = "South East Asia"

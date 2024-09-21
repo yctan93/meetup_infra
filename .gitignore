@@ -2,3 +2,5 @@ terraform/.terraform.lock.hcl
 terraform/.terraform
 terraform/environments
 ids
+credentials
+modules/mssql_server/credentials
